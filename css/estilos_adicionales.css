@@ -40,6 +40,8 @@ body {
     padding: 0 20px;
 }
 .main-header h1 {
+    /* color: #ffffff;
+    color: var(--color-texto); */
     order: 2;
     white-space: nowrap;
     text-align: center;
@@ -50,12 +52,14 @@ body {
     order: 1;
     margin-right: auto;
     padding: 10px 0;
+    cursor: pointer;
 }
 .main-header .notifications {
     order: 3;
     display: flex;
     justify-content: center;
     margin-left: auto;
+    cursor: pointer;
 }
 
 /* ESTILOS DE BARRA DE NAVEGACIÓN */
@@ -66,32 +70,33 @@ main section{
     padding: 3px;
     background-color: green;
 }
+
 /* ESTILOS DE BARRA DE NAVEGACIÓN */
 .main-menu {
-    background-color: #f0f0f0; /* Cambia esto al color que prefieras */
-    padding: 20px; /* Aumenta el padding para dar más espacio */
-    display: flex; /* Hace que las secciones del menú se muestren en una fila */
-    justify-content: space-between; /* Distribuye el espacio de manera uniforme entre las secciones del menú */
-    width: 100%; /* Ajusta el ancho del contenedor para que sea el 100% del ancho de su contenedor padre */
-    overflow-x: auto; /* Añade una barra de desplazamiento horizontal si el contenido es más ancho que el contenedor */
+    background-color: #f0f0f0; 
+    padding: 20px; 
+    display: flex; 
+    justify-content: space-between; 
+    width: 100%; 
+    overflow-x: auto; 
 }
 .menu-group {
-    flex-basis: calc(50% - 10px); /* Hace que cada sección del menú ocupe la mitad del ancho del menú, menos 10px para el margen */
-    margin-bottom: 20px; /* Añade espacio entre las secciones del menú */
+    flex-basis: calc(50% - 10px); 
+    margin-bottom: 20px; 
 }
 .menu-group h2 {
-    font-size: 1.2em; /* Aumenta el tamaño de la fuente del encabezado de la sección */
-    margin-bottom: 10px; /* Añade espacio debajo del encabezado de la sección */
+    font-size: 1.2em; 
+    margin-bottom: 10px; 
 }
 .menu-group a {
-    display: flex; /* Alinea el ícono y el texto de cada enlace */
-    align-items: center; /* Alinea verticalmente el ícono y el texto de cada enlace */
-    color: #333; /* Cambia esto al color que prefieras para el texto del enlace */
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    margin-bottom: 5px; /* Añade espacio debajo de cada enlace */
+    display: flex;
+    align-items: center; 
+    color: #333; 
+    text-decoration: none; 
+    margin-bottom: 5px; 
 }
 .menu-group a .material-icons {
-    margin-right: 10px; /* Añade espacio a la derecha del ícono de cada enlace */
+    margin-right: 10px; 
 }
 
 /* PLANTILLA DE PRODUCTOS */
@@ -128,27 +133,119 @@ main section{
     background-color: violet;
 }
 
-/* ESTILOS DE ...*/
+/* ESTILOS PARA LA ESTRUCTURA GENERAL DEL MAIN */
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+    flex-direction: initial;
+    flex-wrap: initial;
+}
+.exclusive-offers {
+    grid-column: 1 / -1; /* La sección "exclusive-offers" ocupa toda la primera fila */
+}
+.activity {
+    grid-column: 1 / 3; /* La sección "activity" ocupa dos tercios de la segunda fila */
+}
+.cards {
+    grid-column: 3 / 4; /* La sección "cards" ocupa un tercio de la segunda fila */
+}
+.stock-control, .currency, .contact-support {
+    grid-column: span 1;
+    display: block;
+}
+.loading {
+    width: 100%;
+    display: block;
+}
 
-/* CABECERA PRINCIPAL */
-/* .main-header{
+/* ESTILOS PARA LA SECCIÓN "EXCLUSIVE OFFERS" */
+.exclusive-offers {
+    background-color: var(--color-fondo);
+    padding-top: 20px;
+}
+.exclusive-offers h2 {
+    text-align: center;
+    font-size: 2em; 
+    font-weight: bold; 
+    margin-bottom: 20px; 
+    padding: 20px;
+}
+.art-offer img {
+    max-width: 80%;
+    display: block;
+    margin: 20px auto;
+    width: 20%;
+}
+.art-offer {
+    position: relative;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px;
+    box-sizing: border-box;
+    width: calc(100% - 40px);
+    color: var(--color-texto);
+    background-color: #f0f0f0; 
 }
-
-.main-header h1 {
-    order: 1;
-}
-
-.main-header img {
-    order: 2;
-}
-
-.main-header .notifications {
-    order: 3;
-    width: 100%;
+.art-offer header {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-} */
+    gap: 10px;
+    padding: 50px;
+}
+.art-offer header h3, .art-offer header p {
+    font-size: 1.2em;
+    cursor: pointer;
+}
+.art-offer p[data-art-old-price]:hover::after {
+    content: "Antes: $" attr(data-art-old-price);
+    display: block;
+    color: var(--color-acento);
+}
+.art-offer header, .art-offer .art-details, .art-offer footer {
+    flex: 1;
+}
+.art-offer .art-details {
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+.art-offer button {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    background-color: var(--color-acento);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Añade una sombra al botón */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.art-offer button:hover {
+    background-color: #81B29A;
+    color: white;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+.art-offer footer {
+    order: 5;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
