@@ -171,6 +171,7 @@ main {
     font-weight: bold; 
     margin-bottom: 20px; 
     padding: 20px;
+    color: var(--color-texto);
 }
 .art-offer img {
     max-width: 80%;
@@ -230,7 +231,7 @@ main {
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Añade una sombra al botón */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -248,4 +249,203 @@ main {
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+/* ESTILOS PARA LA SECCIÓN "ACTIVITY" */
+.activity {
+    background-color: var(--color-fondo); 
+    padding: 20px; 
+    margin-left: 20px;
+}
+.activity h2 {
+    text-align: center; 
+    font-size: 2em; 
+    font-weight: bold; 
+    color: var(--color-texto); 
+    margin-bottom: 20px; 
+}
+.activity table {
+    width: 100%; 
+    border-collapse: collapse; 
+}
+.activity th, .activity td {
+    border: 1px solid var(--color-texto); 
+    padding: 10px; 
+    text-align: left; 
+}
+.activity th {
+    background-color: var(--color-acento); 
+    color: white; 
+}
+.activity td {
+    background-color: white;
+}
+.activity button {
+    background-color: var(--color-acento); 
+    color: white; 
+    border: none; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    cursor: pointer;
+}
+.activity button:hover {
+    background-color: #81B29A;
+}
+
+/* ESTILOS PARA LA SECCIÓN "CARDS" */
+.cards {
+    background-color: var(--color-fondo); 
+    padding: 20px; 
+    margin-top: 25px; 
+}
+.cards h2 {
+    text-align: center; 
+    font-size: 2em; 
+    font-weight: bold; 
+    color: var(--color-texto); 
+    margin-bottom: 20px; 
+}
+.card {
+    background-color: white; 
+    border: 1px solid var(--color-texto); 
+    border-radius: 5px; 
+    padding: 10px; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
+    margin-top: 50px; 
+    transition: all 0.3s ease; 
+    cursor: pointer;
+}
+.card:hover {
+    z-index: 1; 
+}
+.card h3 {
+    font-size: 1.2em; 
+    color: var(--color-texto); 
+    margin-bottom: 10px; 
+}
+.card p {
+    color: var(--color-texto); 
+}
+.card img {
+    width: 50px; 
+    position: absolute; 
+    bottom: 10px; 
+    right: 10px;
+}
+
+/* ESTILOS PARA LA SECCIÓN "STOCK CONTROL" */
+.stock-control {
+    background-color: var(--color-fondo);
+    padding: 20px;
+}
+.stock-control h2 {
+    /* text-align: center; */
+    margin-left: 15px;
+}
+.stock-alert {
+    width: 250px;
+    margin: 10px;
+    padding: 10px; 
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.stock-alert[data-alert-level="high"] {
+    background-color: red;
+    color: white;
+}
+.stock-alert[data-alert-level="medium"] {
+    background-color: orange;
+    color: white;
+}
+.stock-alert[data-alert-level="low"] {
+    background-color: green;
+    color: white;
+}
+.stock-alert:hover::after {
+    content: "Stock: " attr(data-stock) "       Alerta: " attr(data-alert-level);
+    white-space: pre;
+    display: block;
+    color: white;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+/* ESTILOS PARA LA SECCIÓN "CURRENCY" */
+.currency {
+    background-color: var(--color-fondo);
+    padding: 20px;
+}
+.loading {
+    justify-content: center;
+}
+.currency>p {
+    display: block;
+}
+
+/* ESTILOS PARA LA SECCIÓN "CURRENCY" */
+.currency {
+    background-color: var(--color-fondo);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+.loading {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.loading-item {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: lightblue;
+    animation: loading 1s infinite;
+}
+@keyframes loading {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+.currency>p {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+
+/* ESTILOS PARA LA SECCIÓN "CONTACT SUPPORT" */
+.contact-support {
+    background-color: var(--color-fondo);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.contact-support .material-icons-outlined {
+    font-size: 2em;
+    color: var(--color-acento);
+    cursor: pointer;
+}
+.contact-support .contact-text {
+    font-size: 1.2em;
+    color: var(--color-texto);
+    cursor: pointer;
+}
+
+/* ESTILOS PARA EL FOOTER */
+.main-footer {
+    background-color: var(--color-fondo);
+    color: var(--color-texto); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 1.2em; 
+    background-color: #81B29A;
+    background-color: #f0f0f0;
 }
