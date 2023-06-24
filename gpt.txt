@@ -1,0 +1,115 @@
+Bien chat, eso estuvo muy bien, ahora vamos a subir un poco la dificultado psando con a modificar el nav, no olvides
+que solo podemos hacer las modificaciones correspondientes haciendo uso de nuestro archivo de 'estilos_adicionales.css'
+
+El elemento que vamos a trbajar ahora es el nav y esta contituido de la siguiente manera:
+        <nav class="main-menu">
+            <section class="menu-group">
+                <h2> Usuario </h2>
+                <a href="#">                    
+                    <span class="material-icons"> home </span>
+                    <span class="menu-text"> Inicio </span>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> manage_accounts </span>
+                    <span class="menu-text"> Perfil </span>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> contact_support </span>
+                    <span class="menu-text"> Ayuda </span>
+                </a>
+            </section>
+
+            <section class="menu-group">
+                <h2> Actividad </h2>
+                <a href="#">
+                    <span class="material-icons"> shopping_cart </span>
+                    <span class="menu-text"> Tus compras </span>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> sell </span>
+                    <span class="menu-text"> Tus ventas </span>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> list_alt </span>
+                    <span class="menu-text"> Movimientos </span>
+                </a>
+            </section>
+
+            <section class="menu-group">
+                <h2> Finanzas </h2>
+                <a href="#">
+                    <span class="material-icons"> credit_card </span>
+                    <span class="menu-text"> Tarjetas vinculadas </span>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> account_balance </span>
+                    <span class="menu-text"> Cuentas vinculadas </span>
+                </a>
+            </section>
+
+            <section class="menu-group">
+                <h2> Tu tienda </h2>
+                <a href="#">
+                    <span class="material-icons"> store </span>
+                    <span class="menu-text"> Productos </span>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> local_shipping </span>
+                    <span class="menu-text"> Proveedores </span>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> savings </span>
+                    <span class="menu-text"> Costos </span>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> request_quote </span>
+                    <span class="menu-text"> Comisiones </span>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> analytics </span>
+                    <span class="menu-text"> Estadísticas </span>
+                </a>
+                
+            </section>
+
+            <section class="menu-group">
+                <h2> Clientes </h2>
+                <a href="#">
+                    <span class="material-icons"> group </span>
+                    <span class="menu-text"> Listado </span>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> person_add </span>
+                    <span class="menu-text"> Agregar </span>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> switch_account </span>
+                    <span class="menu-text"> Editar </span>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> person_remove </span>
+                    <span class="menu-text"> Eliminar </span>
+                </a>
+                <a href="#">
+                    <span class="material-icons"> assessment </span>
+                    <span class="menu-text"> Estadísticas </span>
+                </a>                
+            </section>           
+
+            <section class="menu-group">
+                <h2> Sesión </h2>
+                <a href="#">
+                    <span class="material-icons"> logout </span>
+                    <span class="menu-text"> Salir </span>
+                </a> 
+            </section>
+        </nav>
+ y sus estilos preestablecidos:
+ /* MENU PRINCIPAL*/
+.main-menu{
+    width: var(--nav-width);
+    padding: 5px; 
+    overflow-y: scroll;
+}
+
+Como crees que podriamos organizar la estructura de la mejor manera posible cumpliendo con los requeriemientos del proyecto?

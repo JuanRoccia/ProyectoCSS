@@ -7,15 +7,57 @@
 /* ORGANIZAR LAS DECLARACIONES EN BLOQUES*/
 
 /* ESTILOS GENERALES*/
+:root {
+    --color-principal: #f0f0f0;
+    --color-secundario: #333333;
+    --color-acento: #007BFF;
+    --color-fondo: #ffffff;
+    --color-texto: #666666;
+}
+.main-menu {
+    background-color: var(--color-principal);
+}
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-secundario);
+}
 
+a {
+    color: var(--color-acento);
+}
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
 
 /* ESTILOS DE CABECERA PRINCIPAL*/
 .main-header{
     background-color: blue;
+    background-color: var(--color-secundario);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+.main-header h1 {
+    order: 2;
+    white-space: nowrap;
+    text-align: center;
+    flex-grow: 1;
 }
 .main-header img{
     height: 100%;
+    order: 1;
+    margin-right: auto;
+    padding: 10px 0;
 }
+.main-header .notifications {
+    order: 3;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+}
+
 /* ESTILOS DE BARRA DE NAVEGACIÓN */
 .main-menu{
     background-color: red;   
@@ -23,6 +65,33 @@
 main section{
     padding: 3px;
     background-color: green;
+}
+/* ESTILOS DE BARRA DE NAVEGACIÓN */
+.main-menu {
+    background-color: #f0f0f0; /* Cambia esto al color que prefieras */
+    padding: 20px; /* Aumenta el padding para dar más espacio */
+    display: flex; /* Hace que las secciones del menú se muestren en una fila */
+    justify-content: space-between; /* Distribuye el espacio de manera uniforme entre las secciones del menú */
+    width: 100%; /* Ajusta el ancho del contenedor para que sea el 100% del ancho de su contenedor padre */
+    overflow-x: auto; /* Añade una barra de desplazamiento horizontal si el contenido es más ancho que el contenedor */
+}
+.menu-group {
+    flex-basis: calc(50% - 10px); /* Hace que cada sección del menú ocupe la mitad del ancho del menú, menos 10px para el margen */
+    margin-bottom: 20px; /* Añade espacio entre las secciones del menú */
+}
+.menu-group h2 {
+    font-size: 1.2em; /* Aumenta el tamaño de la fuente del encabezado de la sección */
+    margin-bottom: 10px; /* Añade espacio debajo del encabezado de la sección */
+}
+.menu-group a {
+    display: flex; /* Alinea el ícono y el texto de cada enlace */
+    align-items: center; /* Alinea verticalmente el ícono y el texto de cada enlace */
+    color: #333; /* Cambia esto al color que prefieras para el texto del enlace */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    margin-bottom: 5px; /* Añade espacio debajo de cada enlace */
+}
+.menu-group a .material-icons {
+    margin-right: 10px; /* Añade espacio a la derecha del ícono de cada enlace */
 }
 
 /* PLANTILLA DE PRODUCTOS */
@@ -60,3 +129,26 @@ main section{
 }
 
 /* ESTILOS DE ...*/
+
+/* CABECERA PRINCIPAL */
+/* .main-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.main-header h1 {
+    order: 1;
+}
+
+.main-header img {
+    order: 2;
+}
+
+.main-header .notifications {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+} */
