@@ -11,6 +11,7 @@
     --color-principal: #f0f0f0;
     --color-secundario: #333333;
     --color-acento: #007BFF;
+    --color-action: #81B29A;
     --color-fondo: #ffffff;
     --color-texto: #666666;
 }
@@ -20,7 +21,6 @@
 h1, h2, h3, h4, h5, h6 {
     color: var(--color-secundario);
 }
-
 a {
     color: var(--color-acento);
 }
@@ -33,15 +33,14 @@ body {
 .main-header{
     background-color: blue;
     background-color: var(--color-secundario);
-    color: #ffffff;
+    color: var(--color-fondo);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
 }
 .main-header h1 {
-    /* color: #ffffff;
-    color: var(--color-texto); */
+    /* color: var(--color-fondo); */
     order: 2;
     white-space: nowrap;
     text-align: center;
@@ -73,7 +72,7 @@ main section{
 
 /* ESTILOS DE BARRA DE NAVEGACIÓN */
 .main-menu {
-    background-color: #f0f0f0; 
+    background-color: var(--color-principal);
     padding: 20px; 
     display: flex; 
     justify-content: space-between; 
@@ -190,7 +189,7 @@ main {
     box-sizing: border-box;
     width: calc(100% - 40px);
     color: var(--color-texto);
-    background-color: #f0f0f0; 
+    background-color: var(--color-principal);
 }
 .art-offer header {
     display: flex;
@@ -236,7 +235,7 @@ main {
     transition: all 0.3s ease;
 }
 .art-offer button:hover {
-    background-color: #81B29A;
+    background-color: var(--color-action);
     color: white;
     transform: scale(1.1);
     transition: all 0.3s ease;
@@ -289,7 +288,7 @@ main {
     cursor: pointer;
 }
 .activity button:hover {
-    background-color: #81B29A;
+    background-color: var(--color-action);
 }
 
 /* ESTILOS PARA LA SECCIÓN "CARDS" */
@@ -417,7 +416,6 @@ main {
     line-height: 1.5;
 }
 
-
 /* ESTILOS PARA LA SECCIÓN "CONTACT SUPPORT" */
 .contact-support {
     background-color: var(--color-fondo);
@@ -441,11 +439,10 @@ main {
 /* ESTILOS PARA EL FOOTER */
 .main-footer {
     background-color: var(--color-fondo);
-    color: var(--color-texto); 
+    color: var(--color-texto);
     display: flex; 
     justify-content: center; 
     align-items: center; 
     font-size: 1.2em; 
-    background-color: #81B29A;
-    background-color: #f0f0f0;
+    background-color: var(--color-principal);
 }
