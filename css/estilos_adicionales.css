@@ -1,6 +1,6 @@
 /***********************************************
 
- Autores: Integrante 1 - Integrante 2
+ Autores: Andres Fernandes - Juan Roccia
 
 ***********************************************/
 
@@ -15,10 +15,14 @@
     --color-fondo: #ffffff;
     --color-texto: #666666;
 }
+main {
+    justify-content: center;
+    padding: 20px 0;
+}
 .main-menu {
     background-color: var(--color-principal);
 }
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
     color: var(--color-secundario);
 }
 a {
@@ -59,17 +63,6 @@ body {
     justify-content: center;
     margin-left: auto;
     cursor: pointer;
-    /* width: 80px; */
-    /* margin: 20px; */
-}
-
-/* ESTILOS DE BARRA DE NAVEGACIÓN */
-.main-menu{
-    background-color: red;   
-}
-main section{
-    padding: 3px;
-    background-color: green;
 }
 
 /* ESTILOS DE BARRA DE NAVEGACIÓN */
@@ -100,11 +93,6 @@ main section{
     margin-right: 10px; 
 }
 
-/* PLANTILLA DE PRODUCTOS */
-.card{
-    background-color: brown;
-}
-
 /* CONTROL DE STOCK */
 .stock-control{
     display: flex;
@@ -123,34 +111,15 @@ main section{
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: lightblue;
 }
 .currency>p{
     display: none;
 }
 
-/* FOOTER */
-.main-footer{
-    background-color: violet;
-}
-
 /* ESTILOS PARA LA ESTRUCTURA GENERAL DEL MAIN */
 main {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 20px;
     flex-direction: initial;
-    flex-wrap: initial;
-}
-.exclusive-offers {
-    grid-column: 1 / -1; /* La sección "exclusive-offers" ocupa toda la primera fila */
-}
-.activity {
-    grid-column: 1 / 3; /* La sección "activity" ocupa dos tercios de la segunda fila */
-}
-.cards {
-    grid-column: 3 / 4; /* La sección "cards" ocupa un tercio de la segunda fila */
+    flex-wrap: wrap;
 }
 .stock-control, .currency, .contact-support {
     grid-column: span 1;
@@ -228,7 +197,7 @@ main {
     left: 0;
     transform: none;
     background-color: var(--color-acento);
-    color: white;
+    color: var(--color-fondo);
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
@@ -238,7 +207,7 @@ main {
 }
 .art-offer button:hover {
     background-color: var(--color-action);
-    color: white;
+    color: var(--color-fondo);
     transform: scale(1.1);
     transition: all 0.3s ease;
 }
@@ -255,11 +224,12 @@ main {
 /* ESTILOS PARA LA SECCIÓN "ACTIVITY" */
 .activity {
     background-color: var(--color-fondo); 
-    padding: 20px; 
+    padding: 50px; 
     margin-left: 20px;
+    width: 100%;
 }
 .activity h2 {
-    text-align: center; 
+    text-align: left; 
     font-size: 2em; 
     font-weight: bold; 
     color: var(--color-texto); 
@@ -269,21 +239,28 @@ main {
     width: 100%; 
     border-collapse: collapse; 
 }
+.activity th {
+    background-color: var(--color-acento); 
+    color: var(--color-fondo);
+}
 .activity th, .activity td {
-    border: 1px solid var(--color-texto); 
+    border: 0px solid var(--color-texto); 
     padding: 10px; 
     text-align: left; 
 }
-.activity th {
-    background-color: var(--color-acento); 
-    color: white; 
+.activity tr {
+    background-color: var(--color-principal);
+    transition: font-size 0.3s ease-in-out;
 }
-.activity td {
-    background-color: white;
+.activity tr:nth-child(even) {
+    background-color: var(--color-fondo);
+}
+.activity tr:hover {
+    font-size: medium;
 }
 .activity button {
     background-color: var(--color-acento); 
-    color: white; 
+    color: var(--color-fondo); 
     border: none; 
     padding: 5px 10px; 
     border-radius: 5px; 
@@ -297,22 +274,22 @@ main {
 .cards {
     background-color: var(--color-fondo); 
     padding: 20px; 
-    margin-top: 25px; 
+    margin: 10px;
 }
 .cards h2 {
     text-align: center; 
-    font-size: 2em; 
+    font-size: 1.7em; 
     font-weight: bold; 
     color: var(--color-texto); 
     margin-bottom: 20px; 
 }
 .card {
-    background-color: white; 
-    border: 1px solid var(--color-texto); 
+    background-color: var(--color-fondo);
+    border: 0px solid var(--color-texto); 
     border-radius: 5px; 
     padding: 10px; 
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
-    margin-top: 50px; 
+    margin-top: 35px; 
     transition: all 0.3s ease; 
     cursor: pointer;
 }
@@ -338,10 +315,14 @@ main {
 .stock-control {
     background-color: var(--color-fondo);
     padding: 20px;
+    margin: 0 60px;
+    text-align: center;
 }
 .stock-control h2 {
-    /* text-align: center; */
-    margin-left: 15px;
+    text-align: center;
+    font-size: 2em; 
+    font-weight: bold;
+    color: var(--color-texto);
 }
 .stock-alert {
     width: 250px;
@@ -351,49 +332,46 @@ main {
     border-radius: 5px;
 }
 .stock-alert[data-alert-level="high"] {
-    background-color: red;
-    color: white;
+    background-color: var(--color-acento);
 }
 .stock-alert[data-alert-level="medium"] {
-    background-color: orange;
-    color: white;
+    background-color: var(--color-principal);
 }
 .stock-alert[data-alert-level="low"] {
-    background-color: green;
-    color: white;
+    background-color: var(--color-action);
 }
 .stock-alert:hover::after {
-    content: "Stock: " attr(data-stock) "       Alerta: " attr(data-alert-level);
+    content: "Stock: " attr(data-stock) "     Alerta: " attr(data-alert-level);
     white-space: pre;
     display: block;
-    color: white;
+    color: var(--color-fondo);
     font-size: 1.2em;
     line-height: 1.5;
 }
 
 /* ESTILOS PARA LA SECCIÓN "CURRENCY" */
 .currency {
-    background-color: var(--color-fondo);
     padding: 20px;
-}
-.loading {
-    justify-content: center;
-}
-.currency>p {
-    display: block;
-}
-
-/* ESTILOS PARA LA SECCIÓN "CURRENCY" */
-.currency {
+    margin: 10px;
     background-color: var(--color-fondo);
-    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     text-align: center;
 }
+.currency h2 {
+    text-align: center; 
+    font-size: 1.7em; 
+    font-weight: bold;
+    color: var(--color-texto);
+}
+.currency>p {
+    display: block;
+}
 .loading {
+    justify-content: center;
+    margin-top: 20px;
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -403,7 +381,7 @@ main {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: lightblue;
+    background-color: var(--color-acento);
     animation: loading 1s infinite;
 }
 @keyframes loading {
@@ -420,12 +398,15 @@ main {
 
 /* ESTILOS PARA LA SECCIÓN "CONTACT SUPPORT" */
 .contact-support {
+    margin-top: 20px;
     background-color: var(--color-fondo);
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 20px;
     gap: 10px;
+    width: 100%;
 }
 .contact-support .material-icons-outlined {
     font-size: 2em;
