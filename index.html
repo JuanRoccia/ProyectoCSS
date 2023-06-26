@@ -273,5 +273,18 @@
         <footer class="main-footer">
             Plantilla del documento para Proyecto CSS - FDW
         </footer>
+
+        <script>
+            let lastScrollTop = 0;
+            window.addEventListener("scroll", function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop) {
+                    document.querySelector('.main-menu').classList.add('scroll-down');
+                } else {
+                    document.querySelector('.main-menu').classList.remove('scroll-down');
+                }
+                lastScrollTop = scrollTop;
+            });
+        </script>
     </body>
 </html>

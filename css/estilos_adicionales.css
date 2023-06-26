@@ -33,8 +33,55 @@ body {
     color: var(--color-texto);
 }
 
+/*          ESTILOS DE CABECERA PRINCIPAL Y MENÚ PRINCIPAL 
+
+    (Ambos menu de navegacion fijos - Futura implementacion con js) 
+
+*/
+.main-header, .main-menu {
+    position: fixed;
+    width: 100%;
+    z-index: 3000;
+}
+body {
+    margin-top: 0;
+}
+main {
+    top: 300px;
+    position: sticky;
+    position: absolute;
+    position: relative;
+}
+/* Esta transicion solo es visible con el js implementado */
+.main-menu.scroll-down {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+/* Fin */
+
+/* El JavaScript para que el menu funcione correctamente seria el siguiente: 
+
+        <script>
+            let lastScrollTop = 0;
+            window.addEventListener("scroll", function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop) {
+                    document.querySelector('.main-menu').classList.add('scroll-down');
+                } else {
+                    document.querySelector('.main-menu').classList.remove('scroll-down');
+                }
+                lastScrollTop = scrollTop;
+            });
+        </script>
+
+*/
+
+
 /* ESTILOS DE CABECERA PRINCIPAL*/
 .main-header{
+    /* Implementacion para ambos menu de navegacion fijos */
+    z-index: 2;
+    /* Fin */
     background-color: var(--color-secundario);
     color: var(--color-fondo);
     display: flex;
@@ -67,6 +114,10 @@ body {
 
 /* ESTILOS DE BARRA DE NAVEGACIÓN */
 .main-menu {
+    /* Implementacion para ambos menu de navegacion fijos */
+    top: 80px;
+    z-index: 1;
+    /* Fin */
     background-color: var(--color-principal);
     padding: 20px; 
     display: flex; 
@@ -421,6 +472,10 @@ main {
 
 /* ESTILOS PARA EL FOOTER */
 .main-footer {
+    /* Implementacion para ambos menu de navegacion fijos */
+    top: 300px;
+    position: relative;
+    /* Fin */
     background-color: var(--color-fondo);
     color: var(--color-texto);
     display: flex; 
